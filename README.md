@@ -1,3 +1,5 @@
+[![CI](https://github.com/TheGalaxyHunter/plasma-arc-detection/actions/workflows/ci.yml/badge.svg)](https://github.com/TheGalaxyHunter/plasma-arc-detection/actions/workflows/ci.yml)
+
 # plasma-arc-detection
 
 **Deep learning pipeline for plasma arc detection and analysis**
