@@ -1,0 +1,50 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+*.egg
+dist/
+build/
+.eggs/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Data
+data/raw/
+data/processed/
+*.csv
+*.h5
+*.hdf5
+*.npy
+*.npz
+
+# Model artifacts
+checkpoints/
+outputs/
+runs/
+wandb/
+mlruns/
+
+# Hydra
+multirun/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment
+.env

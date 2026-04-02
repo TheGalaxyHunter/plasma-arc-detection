@@ -1,0 +1,46 @@
+defaults:
+  - model: cnn_lstm
+
+# Data configuration
+data:
+  root_dir: data/processed
+  train_split: 0.8
+  val_split: 0.1
+  test_split: 0.1
+  sequence_length: 256
+  num_channels: 6  # voltage, current, 4 spectral bands
+  sample_rate_hz: 10000
+  normalize: true
+
+# Training configuration
+training:
+  epochs: 100
+  batch_size: 64
+  learning_rate: 1e-3
+  weight_decay: 1e-4
+  scheduler: cosine
+  warmup_epochs: 5
+  early_stopping:
+    patience: 15
+    min_delta: 1e-4
+    monitor: val_f1
+  gradient_clip_norm: 1.0
+
+# Experiment tracking
+tracking:
+  backend: wandb  # wandb or mlflow
+  project: plasma-arc-detection
+  experiment: default
+  log_interval: 10
+
+# Checkpointing
+checkpoint:
+  dir: checkpoints
+  save_top_k: 3
+  monitor: val_f1
+  mode: max
+
+# Reproducibility
+seed: 42
+num_workers: 4
+pin_memory: true
