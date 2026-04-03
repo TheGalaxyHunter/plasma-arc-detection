@@ -64,17 +64,23 @@ in real time using a CNN-LSTM hybrid architecture with self-attention.
 
 ### Installation
 
+This project uses [uv](https://docs.astral.sh/uv/) for fast, reproducible Python environment and dependency management.
+
 ```bash
+# Install uv (if not already installed)
+curl -LsSf https://astral.sh/uv/install.sh | sh
+
+# Clone and set up
 git clone https://github.com/TheGalaxyHunter/plasma-arc-detection.git
 cd plasma-arc-detection
-pip install -e ".[dev]"
+uv sync
 ```
 
 ### Training
 
 ```bash
 # Using Hydra config
-python -m src.training.trainer --config-path=../configs --config-name=train
+uv run python -m src.training.trainer --config-path=../configs --config-name=train
 
 # Or use the convenience script
 bash scripts/train.sh

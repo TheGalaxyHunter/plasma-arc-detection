@@ -16,12 +16,12 @@ echo "============================================"
 echo "  Plasma Arc Detection - Training"
 echo "============================================"
 echo "Project root: $PROJECT_ROOT"
-echo "Python:       $(python --version 2>&1)"
-echo "PyTorch:      $(python -c 'import torch; print(torch.__version__)' 2>/dev/null || echo 'not installed')"
-echo "Device:       $(python -c 'import torch; print("cuda" if torch.cuda.is_available() else "cpu")' 2>/dev/null || echo 'unknown')"
+echo "Python:       $(uv run python --version 2>&1)"
+echo "PyTorch:      $(uv run python -c 'import torch; print(torch.__version__)' 2>/dev/null || echo 'not installed')"
+echo "Device:       $(uv run python -c 'import torch; print("cuda" if torch.cuda.is_available() else "cpu")' 2>/dev/null || echo 'unknown')"
 echo "============================================"
 
-python -m src.training.trainer \
+uv run python -m src.training.trainer \
     --config-path=../configs \
     --config-name=train \
     "$@"
