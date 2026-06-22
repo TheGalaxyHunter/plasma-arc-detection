@@ -46,7 +46,7 @@ dev = [
     "pre-commit>=3.5.0",
 ]
 notebooks = [
-    "jupyterlab>=4.0.0",
+    "jupyterlab>=4.5.9",
     "seaborn>=0.13.0",
 ]
 
